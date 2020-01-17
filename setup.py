@@ -249,7 +249,6 @@ def _read(file):
         return fp.read()
 
 
-
 def _pkg_config(name):
     try:
         command = os.environ.get("PKG_CONFIG", "pkg-config")
