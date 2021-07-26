@@ -37,6 +37,7 @@ from __future__ import print_function
 import array
 import struct
 import io
+import math
 import warnings
 from . import Image, ImageFile, TiffImagePlugin
 from ._binary import i8, o8, i16be as i16, i32be as i32
@@ -162,11 +163,13 @@ def APP(self, marker):
                 dpi = float(x_resolution[0]) / x_resolution[1]
             except TypeError:
                 dpi = x_resolution
+            if math.isnan(dpi):
+                raise ValueError
             if resolution_unit == 3:  # cm
                 # 1 dpcm = 2.54 dpi
                 dpi *= 2.54
             self.info["dpi"] = int(dpi + 0.5), int(dpi + 0.5)
-        except (KeyError, SyntaxError, ZeroDivisionError):
+        except (TypeError, KeyError, SyntaxError, ValueError, ZeroDivisionError):
             # SyntaxError for invalid/unreadable EXIF
             # KeyError for dpi not included
             # ZeroDivisionError for invalid dpi rational value
