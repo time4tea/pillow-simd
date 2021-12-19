@@ -9,6 +9,7 @@
 
 #include "Python.h"
 
+
 /* Workaround issue #2479 */
 #if PY_VERSION_HEX < 0x03070000 && defined(PySlice_GetIndicesEx) && !defined(PYPY_VERSION)
 #undef PySlice_GetIndicesEx
@@ -84,3 +85,5 @@ typedef signed __int64       int64_t;
                        + __GNUC_MINOR__ * 100 \
                        + __GNUC_PATCHLEVEL__)
 #endif
+
+#include "ImagingSIMD.h"
