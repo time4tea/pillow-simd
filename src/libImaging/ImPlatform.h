@@ -9,19 +9,6 @@
 
 #include "Python.h"
 
-/* Microsoft compiler doesn't limit intrinsics for an architecture.
-   This macro is set only on x86 and means SSE2 and above including AVX2. */
-#if defined(_M_X64) || _M_IX86_FP == 2
-    #define __SSE4_2__
-#endif
-#if defined(__SSE4_2__)
-    #include <emmintrin.h>
-    #include <mmintrin.h>
-    #include <smmintrin.h>
-#endif
-#if defined(__AVX2__)
-    #include <immintrin.h>
-#endif
 
 /* Workaround issue #2479 */
 #if PY_VERSION_HEX < 0x03070000 && defined(PySlice_GetIndicesEx) && \
@@ -97,3 +84,5 @@ typedef signed __int64 int64_t;
 #ifdef __GNUC__
 #define GCC_VERSION (__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
 #endif
+
+#include "ImagingSIMD.h"
