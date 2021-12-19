@@ -40,7 +40,7 @@ The project is supported by Uploadcare, a SAAS for cloud-based image storing and
 
 [![Uploadcare][uploadcare.logo]][uploadcare.com]
 
-In fact, Uploadcare has been running Pillow-SIMD for about three years now.
+In fact, Uploadcare has been running Pillow-SIMD since 2015.
 
 The following image operations are currently SIMD-accelerated:
 
@@ -96,6 +96,7 @@ So there is no easy way to compile such library, especially with setuptools.
 
 If there's a copy of the original Pillow installed, it has to be removed first
 with `$ pip uninstall -y pillow`.
+Please install [prerequisites](https://pillow.readthedocs.io/en/stable/installation.html#building-from-source) for your platform.
 The installation itself is simple just as running `$ pip install pillow-simd`, 
 and if you're using SSE4-capable CPU everything should run smoothly.
 If you'd like to install the AVX2-enabled version, 
@@ -124,4 +125,4 @@ All bugfixes to the original Pillow will then be transferred to the next Pillow-
   [pillow-perf-page]: https://python-pillow.github.io/pillow-perf/
   [pillow-perf-repo]: https://github.com/python-pillow/pillow-perf
   [uploadcare.com]: https://uploadcare.com/?utm_source=github&utm_medium=description&utm_campaign=pillow-simd
-  [uploadcare.logo]: https://ucarecdn.com/74c4d283-f7cf-45d7-924c-fc77345585af/uploadcare.svg
+  [uploadcare.logo]: https://ucarecdn.com/8eca784b-bbe5-4f7e-8cdf-98d75aab8cec/logotransparent.svg
