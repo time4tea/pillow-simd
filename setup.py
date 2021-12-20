@@ -26,7 +26,7 @@ def get_version():
     return locals()["__version__"]
 
 
-NAME = "Pillow"
+NAME = "Pillow-SIMD"
 PILLOW_VERSION = get_version()
 FREETYPE_ROOT = None
 HARFBUZZ_ROOT = None
@@ -960,7 +960,7 @@ for src_file in _IMAGING:
 for src_file in _LIB_IMAGING:
     files.append(os.path.join("src/libImaging", src_file + ".c"))
 ext_modules = [
-    Extension("PIL._imaging", files),
+    Extension("PIL._imaging", files, extra_compile_args=["-msse4"]),
     Extension("PIL._imagingft", ["src/_imagingft.c"]),
     Extension("PIL._imagingcms", ["src/_imagingcms.c"]),
     Extension("PIL._webp", ["src/_webp.c"]),
@@ -977,15 +977,14 @@ try:
         name=NAME,
         version=PILLOW_VERSION,
         description="Python Imaging Library (Fork)",
-        long_description=long_description,
-        long_description_content_type="text/markdown",
+        long_description=open("PyPI.rst", "r").read(),
         license="HPND",
         author="Alex Clark (PIL Fork Author)",
         author_email="aclark@python-pillow.org",
-        url="https://python-pillow.org",
+        url="https://github.com/uploadcare/pillow-simd",
         project_urls={
             "Documentation": "https://pillow.readthedocs.io",
-            "Source": "https://github.com/python-pillow/Pillow",
+            "Source": "https://github.com/uploadcare/pillow-simd",
             "Funding": "https://tidelift.com/subscription/pkg/pypi-pillow?"
             "utm_source=pypi-pillow&utm_medium=pypi",
             "Release notes": "https://pillow.readthedocs.io/en/stable/releasenotes/"
