@@ -9,6 +9,7 @@
 
 #include "Python.h"
 
+
 /* Check that we have an ANSI compliant compiler */
 #ifndef HAVE_PROTOTYPES
 #error Sorry, this library requires support for ANSI prototypes.
@@ -84,3 +85,5 @@ typedef signed __int64 int64_t;
 #ifdef __GNUC__
 #define GCC_VERSION (__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
 #endif
+
+#include "ImagingSIMD.h"
