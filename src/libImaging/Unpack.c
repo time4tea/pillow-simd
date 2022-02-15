@@ -1428,6 +1428,12 @@ static struct {
     {"CMYK",    "Y;I",          8,      band2I},
     {"CMYK",    "K;I",          8,      band3I},
 
+#ifdef WORDS_BIGENDIAN
+    {"CMYK",    "CMYK;16N",     64,     unpackRGBA16B},
+#else
+    {"CMYK",    "CMYK;16N",     64,     unpackRGBA16L},
+#endif
+
     /* video (YCbCr) */
     {"YCbCr",   "YCbCr",        24,     ImagingUnpackRGB},
     {"YCbCr",   "YCbCr;L",      24,     unpackRGBL},
