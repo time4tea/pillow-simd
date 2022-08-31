@@ -121,7 +121,7 @@ All bugfixes to the original Pillow will then be transferred to the next Pillow-
   [original-issues]: https://github.com/python-pillow/Pillow/issues/new
   [original-changelog]: https://github.com/python-pillow/Pillow/blob/master/CHANGES.rst
   [original-contribute]: https://github.com/python-pillow/Pillow/blob/master/.github/CONTRIBUTING.md
-  [gaussian-blur-changes]: https://pillow.readthedocs.io/en/3.2.x/releasenotes/2.7.0.html#gaussian-blur-and-unsharp-mask
+  [gaussian-blur-changes]: https://pillow.readthedocs.io/en/stable/releasenotes/2.7.0.html#gaussian-blur-and-unsharp-mask
   [pillow-perf-page]: https://python-pillow.github.io/pillow-perf/
   [pillow-perf-repo]: https://github.com/python-pillow/pillow-perf
   [uploadcare.com]: https://uploadcare.com/?utm_source=github&utm_medium=description&utm_campaign=pillow-simd
