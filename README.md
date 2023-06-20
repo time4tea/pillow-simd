@@ -1,7 +1,9 @@
 # Pillow-SIMD
 
-Pillow-SIMD is "following" [Pillow][original-docs].
-Pillow-SIMD versions are 100% compatible
+Pillow-SIMD is highly optimized version of [Pillow library][original-docs]
+for x86 architecture (mainly Intel and AMD CPUs).
+
+Pillow-SIMD is "following" Pillow which means it is
 drop-in replacements for Pillow of the same version.
 For example, `Pillow-SIMD 3.2.0.post3` is a drop-in replacement for
 `Pillow 3.2.0`, and  `Pillow-SIMD 3.3.3.post0` — for `Pillow 3.3.3`.
